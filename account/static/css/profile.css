@@ -1,0 +1,243 @@
+@import url('styles.css');
+
+
+.nav-container{
+  position: fixed ;
+  text-align: center;
+  min-height: 5rem;
+  top: 0;
+  z-index: 1000;
+}
+.nav-side-lt {
+  left: -30rem;
+  height: 100%;
+  width: 25.5rem;
+}
+.nav-side-lt.active{
+    left: 0;
+
+}
+.nav-side-rt {
+  width: 100%;
+}
+
+
+
+
+.nav-shadow {
+  background: var(--white-color);
+  box-shadow: var(--navbar-shadow);
+}
+.nav {
+  display: flex;
+  padding: .3rem;
+ 
+
+}
+
+.navbar a {
+  display: inline-block;
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: #fff;
+}
+.nav-row {
+  align-items: center;  
+  justify-content: space-between;
+}
+.nav-primary {
+  background: var(--color-hunt-blue-light);
+}
+
+.nav-group-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-title{
+  display: none;
+  
+}
+
+.hide {
+  left: -30rem;
+}
+@media screen and (min-width: 768px){
+ 
+  .nav-side-rt {
+   width: calc(100% - 25.5rem);
+   right: 0;
+
+  }
+
+  .nav-side-lt {
+    left: 0;
+  
+  }
+  .nav-title{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 500;
+    
+  }
+  .nav-row{
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+}
+.user__info {
+  padding: 2rem;
+  text-align: center;
+}
+.user__avatar {
+   width: 10rem;
+   height: 10rem;
+  border-radius: 100%;
+}
+
+.user__name {
+  font-size: 3rem;
+  color: var(--white-color);
+  font-weight: bolder;
+}
+.circle-avatar {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+  border-radius: 100%;
+
+}
+
+.logo{
+  margin: 1rem 0;
+  width: 20rem;
+  align-self: center;
+}
+
+
+.card__actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+}
+
+.CardProduct {
+  width: 70%;
+  height: 35rem;
+  border-radius: 5px;
+  position: absolute;
+  color: white;
+  top: 20%;
+  left: 25%;
+}
+
+.CardProduct h1 {
+  font-size: 3rem;
+}
+.CardProduct p {
+  font-size: 2.5rem;
+  margin: 1rem;
+  margin-left: 10rem;
+}
+
+.card__actions input {
+  position: absolute;
+  width: 10%;
+  height: 8%;
+  top: 75%;
+  left: 40%;
+  text-align: center;
+}
+
+.card__actions a {
+  position: absolute;
+  width: 10%;
+  height: 8%;
+  top: 75%;
+  left: 50%;
+  padding-top: 2rem;
+  margin-left: 2rem;
+  text-align: center;
+}
+
+
+
+
+@media(max-width: 1200px) {
+  body.active{
+    padding-left: 30rem;
+  }
+  .nav-side-lt.active {
+    box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
+  }
+}
+
+@media screen and (max-width:480px) {
+  html {
+    font-size: 15%;
+  }
+
+  .CardProduct p {
+    font-size: 20px;
+    margin-left: 0rem;
+  }
+
+  .CardProduct h1 {
+    font-size: 20px;
+  }
+
+  .card__actions input {
+    width: 30%;
+    left: 15%;
+  }
+
+  .card__actions a {
+    width: 30%;
+    padding-top: 3rem;
+  }
+
+  
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  } 
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+
+    font-size: 62.5%;
+  }
+  .product {
+ grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    
+  }
+  .card__product {
+    display: flex;
+    width: 30rem;
+  
+  }
+  .card__body{
+    width: 20rem;
+    height: 10rem;
+  }
+
+  .card__header{
+    width: 20rem;
+    height: 20rem;
+   
+  }
+  .product__description{
+    font-size: 1.5rem;
+    line-height: .9;
+  }
+}
+
+

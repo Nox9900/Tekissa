@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} {% endblock %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}"> 
+{% endblock %} 
+
+{% block content %}
+<section class='container'>
+    <div class="image-container">
+        <img src="{% static 'images/NEWKID.png' %}" alt="" class="form-image">
+    </div>
+    
+    <form action="" method="POST" class="form">
+
+        {% csrf_token %}
+
+        <h1 class="form-title">
+            <a href="{% url 'index' %}"> Reintialisation </a>
+        </h1>
+        <div class='password_reset'>
+            
+                    <input type='password' name='password' class='form-control' autocomplete='new_password'
+                        maxlength=254 required id='id_mail' placeholder='Nouveau mot de passe'
+                    />
+                
+
+                    <input type='password' name='password2' class='form-control' autocomplete='new_password'
+                        maxlength=254 required id='id_mail' placeholder='Confirmation du nouveau mot de passe'
+                    />
+
+        </div>
+        <div>
+          <button type="submit" class="btn btn--square btn--primary" > Réinitialser </button>
+      </div>
+      
+        
+    </form>
+</section>{% endblock %}

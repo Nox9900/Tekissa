@@ -1,0 +1,120 @@
+
+nav {
+    margin-top: -10rem;
+}
+
+.image {
+    margin-top: 10rem;
+    height: 30rem;
+}
+
+.image_slide {
+    background-color: whitesmoke;
+    padding-left: 5rem;
+    padding-bottom: 1rem;
+    display: flex;
+    border: 5px solid whitesmoke;
+    overflow: scroll;
+    height: 28rem;
+}
+
+
+.image_slide img {
+    border: 1px solid blanchedalmond;
+    margin-top: 1.5rem;
+    margin-right: 10rem;
+}
+
+.sec {
+
+    width: 45%;
+    height: 32rem;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    padding-left: 10rem;
+ 
+}
+
+.first_part {
+    margin-bottom: 3rem;
+
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 50px;
+    color: black;
+    width: 100rem;
+
+ }
+
+hr {
+    width: 155%;
+}
+
+.description {
+    margin-top: 1.5rem;
+}
+
+.title span {
+    color: orange;
+    font-size: 35px;
+}
+
+.description p {
+    font-size: 20px;
+    margin-top: 1rem;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.back  a {
+    border: 1px solid orange;
+    background: orange;
+    margin: .5rem;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+    padding:1.5rem;
+    
+}
+
+.back a:hover {
+    opacity: .5;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .first_part {
+        margin-left: -13rem;
+    }
+
+    .detail {
+        width: 40rem;
+        margin-left: -1rem;
+        margin-top: 3rem;
+        font-size: 5px;
+        border-bottom: 1px solid black;
+    }
+
+    .nom {font-size: 25px;}
+    
+    
+
+    .image, .image_slide {
+        height: 20rem;
+    }
+
+    .image_slide img {
+        max-height: 18rem;
+        max-width: 18rem;
+        margin-left: -4.5rem;
+        padding: none;
+    }
+    
+    span {font-size: 20px; color: black; font-weight: bold;}
+}

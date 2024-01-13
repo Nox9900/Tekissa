@@ -1,0 +1,36 @@
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/css/header.css' %}">
+{% endblock%}
+
+{% block content %}
+<body>
+<nav>
+      <div class="header">
+
+            <input type="checkbox" id="check">
+
+            <div class="logo_box"><a href="{% url 'index' %}" ><p class="logo"><span>T</span>ekissa</p></a></div>
+            <div class="slogan"><p>Vendez plus vite, achetez intélligeament</p></div>
+
+            <ul class="topnav" id="myTopnav">
+                  <li><a href="{% url 'account:user_profile' %}" class="deconnexion">Profil</a></li>    
+                  <li><a href="{% url 'account:logout' %}" class="deconnexion">Deconnexion</a></li> 
+                  <li><a href="{% url 'shop:create' %}" class="ajouter">Publier un article</a> </li>
+                  <li><a href="{% url 'guide' %}" class="instructions">Comment ça marche ?</a>  </li>   
+                  <div class='div_tag'><li class='tag'>&#169 Tekissa</li></div>
+
+            </ul>
+
+            <label for="check" class="checkbtn">
+                  <div class="icon">&#9776;</div>
+             </label>
+      </div>
+
+     <script src="{% static 'js/header.js' %}"> </script>
+           
+</nav>
+</body>
+
+{% endblock  %}

@@ -1,0 +1,82 @@
+
+{% extends 'base.html' %} 
+{% block title %} {% endblock %} 
+{% load static %}
+
+{% block css %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true">    
+    <style>
+        .img_profile, .accueil1{
+            display: none;
+        }
+
+    </style>
+{% endblock%}
+
+{% block content%}
+
+{% include 'header.html' %}
+
+<section>
+
+    <h1 class="titre">Mes Elements:</h1>
+
+    <div class="container">
+        <div class="cards">
+
+            <div class="card__user">
+                <div>
+                    {% if not user.profile.picture %}
+                        <div class="card__img">
+                            <img src="{% static  'images/compte.png' %}" class='profil_img' alt="user_photo ">
+                        </div>
+                    
+                    {% else %}
+                        <div class="card__img">
+                            <img src="{{ user.profile.picture.url }}" class='profil_img' alt="user_photo ">
+                        </div>
+                    {% endif %}
+                    <h3 class="card__title">{{ user.username }}</h3>
+
+                </div>
+
+                <div class='user__infos'>
+                    <p class="adress">{{ user.profile.last_name }} {{ user.profile.first_name }} </p>
+                    <p class="adress"> {{ user.profile.address }} </p>
+                    <div class="button-1"><a href="{% url 'account:update_profile' pk=user.profile.pk %}">  Mon Profil </a></div>
+                </div>
+
+                
+            </div>
+
+            {% if not user.profile.cellphone %}
+                <div class='avertissement'>
+                    <p> Veuillez renseigner vos informations en cliquant sur 'Mon Profil' </p>
+                </div>
+
+            {% endif %}
+        </div>
+
+        <div class="article-container">
+
+                {% for article in articles %}
+                        <div class="card">
+                            <img src="{{ article.image }}" class="image" alt=""/>
+                            <h1>{{ article.name }}</h1>
+                            <p class="tit">{{ article.price }} Fcfa</p>
+                            <p><button><a href="{% url 'shop:voir_article' pk=article.pk %}" >Voir</a></button></p>
+                            <p><button class='btn-del' data-id="{{ article.pk }}"><a href="{% url 'shop:delete_article' pk=article.pk %}" style="color:white;">Supprimer</a></button></p>
+                        
+                        </div>
+            {% endfor %}    
+            
+        </div>
+    
+    </div>
+
+</section>
+
+{% endblock %}
+

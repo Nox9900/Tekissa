@@ -1,0 +1,68 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/guide.css' %}" />
+{% endblock %}
+
+
+
+{% block content %}
+
+{% include 'header3.html' %}
+
+<section class="guideLine">
+    <h1 class='indicatif'> Vendre, c'est simple </h1>
+    <div class="sell">
+        <div class='online'>
+            <p> 1. Mets le en ligne gratuitement</p>
+            <p> Enregistre toi sur le site de Tekissa, Connecte toi à ton compte, <br> Prends ton article en photo, 
+            decris-le et fixe ton prix, ensuite appuie sur 'Publier' et ton article est en ligne </p>
+        </div>  
+
+        <div class='online'>
+            <p> 2. Vends et envoie </p>
+            <p> Emballe ton article, et remet le à l'acheteur selon vos termes de livraisons </p> 
+        </div>
+
+    </div>
+    <div class='sell-now' ><a href="{% url 'account:register' %}"> Vendre maintenant </a></div>
+
+    <h1 class='indicatif'> Achete facilement </h1>
+    <div class="buy">
+            <div class='online1'>
+                <p> 1. Trouve ton bien </p>
+                <p> Visite le site de Tekissa. Fais des recherches et trouve ton bien parmi les 
+                    articles publiés.
+                </p>
+            </div>
+
+            <div class='online1'>
+                <p> 2. Achete-le </p>
+                <p> Echande avec le ou la vendeur-se et accorder vous </p>
+            </div>
+
+            <div class='online1'>    
+                <p> 3. Recois ton bien </p>
+                <p> Selon les termes convenus entre le-la vendeur-se et le-la client-e </p>
+            </div>
+
+        </div>
+        <div class="sell-now now"><a href="{% url 'all_articles' %}" > Trouve ton bien </a></div>
+
+    <div class='advices'>
+        <h1 class='security'> Ta sécurité nous importe </h1>
+        {% comment %} <img src="{% static '/images/lock.jpg' %}"  alt="guide"/> {% endcomment %}
+        <p> Achete en toute sécurité </p>
+        <p> Ne pas payer un bien sans l'avoir reçu. payez une fois le produit en votre possesion. <br>
+            En tant qu'acheteur, il vout est recommandé d'opter pour des moyens de livraisons 
+            plus sécurisés.<br> Si un acheteur veut recuperez son bien en presentiel, choisissez
+            des lieux frequenter, ne jamais se rendre au domicile du vendeur .... </p>
+    </div>
+
+
+</section>
+
+
+
+{% endblock %}

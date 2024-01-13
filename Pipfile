@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+django-debug-toolbar = "*"
+pillow = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+start = "python manage.py runserver"
+host = "python manage.py runserver 0.0.0.0:8000"
+migration = "python manage.py makemigrations"
+migrate = "python manage.py migrate" 
+su = "python manage.py createsuperuser"
+startapp = "python manage.py startapp"

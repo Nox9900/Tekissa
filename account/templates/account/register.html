@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block title %} {% endblock %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}">
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+{% endblock %} 
+
+{% block content %}
+{% comment %} {% include 'header3.html' %} {% endcomment %}
+<section class="container">
+    <div class="image-container">
+        <img src="{% static 'images/NEWKID.png' %}" alt="" class="form-image">
+    </div>
+
+    <form action="" method="POST" class="form">
+        {% csrf_token %}
+        <h1 class="form-title">
+            <a href="{% url 'index' %}"> S'inscrire </a>
+        </h1>
+        <div>
+            <div class="form-container">
+                <div class="input-container">
+                    {{ form.username }}
+                </div>
+            </div>
+            <div class="form-container formulaire">
+                <div class="input-container">
+                    {{ form.email }}
+                </div>
+            </div>
+            <div class="form-container formulaire">
+                <div class="input-container">
+                    {{ form.password }}
+                </div>
+            </div>
+           
+            {% for message in messages %}
+            <p class="text-error">{{ message }}</p>
+            {% endfor %}
+        </div>
+        <div>
+          <input type="submit" value="s'enregister" class="btn btn--square btn--primary" />
+      </div>
+        <div class="form-bottom">
+            <p class="form-sub"> Déjà un Compte ? <a class="form-link" href="{% url 'account:login' %}">Se Connecter</a></p>
+        </div>
+        
+    </form>
+</section>
+{% endblock %}

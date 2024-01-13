@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}">
+{% endblock %}
+
+{% block content  %}
+
+   <section class="container">
+ 
+  
+    <div class="image-container">
+      <img src="{% static 'images/NEWKID.png' %}" alt="" class="form-image">
+    </div>
+    <form method="post"  class="form">
+      {% csrf_token %}
+         <h1 class="form-title">
+          <a href="{% url 'index' %}"> Se Connecter </a>
+         </h1>
+         <div >
+
+           <div class="form-container">
+             <div class="input-container">
+               {{ login_form.username }}
+             </div>
+           </div>
+
+           <div class="form-container formulaire">
+             <div class="input-container">
+               {{ login_form.password }}
+             </div>
+           </div>
+
+         </div>
+         {% for message in messages %}
+         <p class="text-error">{{ message }}</p>
+         {% endfor %}
+         <div class="form-checkbox">
+          <input type="checkbox" id="show_password">
+          <label class="checkbox-text" for="Show-password" >Afficher le mot de passe</label>
+         </div>
+        <div class="form-bottom">
+          <p class="form-sub">Pas de Compte ? <a  class="form-link" href="{% url 'account:register' %}">S'incrire</a></p>
+          <p class="form-sub">Mot de Passe <a class="form-link" href="{% url 'account:password_reset' %}"> Oublie ?</a></p>
+        </div>
+        <div class="submit">
+          <input type="submit" value="connexion" class="btn btn--square btn--primary ">
+        </div>
+
+      </form>
+  </div>
+
+ 
+</section> 
+ 
+{% endblock %}

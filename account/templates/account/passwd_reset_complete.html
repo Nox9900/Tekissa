@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% load static %} {% block title %} {% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static '/css/forms.css' %}"> {% endblock %} {% block content %}
+<section class="container">
+    <div class="image-container">
+        <img src="{% static 'images/NEWKID.png' %}" alt="" class="form-image">
+    </div>
+    <div>
+        <div class="form-container">
+            <div class="input-container>"
+                <h2>reintialisation terminé</h2>
+                <hr>
+                <p>votre mot de passe a été reinitialisé. Vous pouvez vous connecter à nouveau</p>
+                <a class="form-link" href="{% url 'account:login' %}"> Connexion</a>
+            </div>
+        </div>
+    </div>
+</section>{% endblock %}

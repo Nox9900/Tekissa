@@ -1,0 +1,6 @@
+
+ARTICLE_VIEW = 'client-article'
+RECHERCHE_VIEW = 'recherche'
+
+ARTICLE_VIEW_BY_APP = 'index:'+ ARTICLE_VIEW
+RECHERCHE_VIEW_BY_APP = 'index:'+ RECHERCHE_VIEW

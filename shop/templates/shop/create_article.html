@@ -1,0 +1,76 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %} {% endblock %} 
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'shop/css/forms.css' %}">
+<style>
+  .ajouter {
+    display: none;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+{% include 'header2.html' %}
+
+
+
+<section class="center-parent">
+    <form method="post" enctype="multipart/form-data"  class="form">
+      <h1 class="head">Publier une annonce</h1>
+      <div class="form-subtitle">
+        <h1>Informations de l'annonce </h1>
+      </div>
+    {% csrf_token %}
+    <div>
+      {{ form.article_name }}
+      {{ form.article_price }}
+    </div>
+    <div>
+      {{ form.category }}
+      {{ form.city }}
+    </div>
+    <div>
+      {{ form.description }}
+    </div>
+
+
+      <div>
+        <input type="file" 
+        multiple 
+        name="images" 
+        accept="image/png, 
+        image/jpeg,
+        image/jpg"
+        class='file-input'
+        required
+        >
+        
+        </div>
+
+        <div class="upload-container">
+          <div class="uploaded-img"></div>
+      </div>
+      <div class="image-selection">
+        <button id="file-submission" type="button">+</button>
+      </div>
+      <div class="aware">
+          <p>Chaque image ne doit pas depasser 5Mo</p>
+          <p>Les formats pris en charge sont * .jpg, .jpeg , et *.png </p>
+      </div>
+      
+      <div>
+        {% if not user.profile.cellphone %}
+          <div>
+            <p> Veuillez cliquer sur <strong>'Profil'</strong> afin de compléter les informations supplémentaires </p>
+          </div>
+        {% else %}
+          <input type="submit" value="Publier"  class="btn btn--square btn--primary"/>
+        {% endif %}
+      </div>
+    </form>
+</section>
+
+
+{% endblock %}

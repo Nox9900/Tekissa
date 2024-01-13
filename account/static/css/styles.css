@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+/* @import url('forms.css'); */
+/* @import url('profile.css'); */
+:root {
+  --primary-color: #19064F;
+  --secondary-color: #300A9A;
+  --color-body: #cccad2; 
+  --color-links-hover: #1EAAF1;
+  --white-color: white ; 
+  --navbar-shadow: 0 0 3px rgba(0,0,0,.2);
+  --color-hunt-blue: #003865;
+  --color-hunt-orange: #EF5B0C;
+  --color-hunt-orange-deep: #F66B0E;
+  --color-hunt-blue-light: #1F4690;
+  
+}
+
+/*  Reset css  */
+*{
+ 
+  margin: 0;padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-decoration: none ;
+  font-family: 'Poppins' , sans-serif;
+  text-decoration: none;
+  transition: all .2s linear;
+ 
+}
+
+/* Typography */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+
+@media(max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 3rem  2rem;
+  }
+}
+@media(max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .banner .content h3 {
+    font-size: 3rem;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+
+/* Links  */
+a {
+  text-decoration: none;
+}
+
+.link {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.link:hover {
+  color: var(--color-links-hover);
+}
+.icon-link:hover + .link {
+  cursor: pointer;
+  color: var(--color-links-hover);
+}
+
+
+
+
+/* Buttons   */
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  padding: .5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.btn--text {
+  padding: 0;
+  font-size: 1.2rem;
+  display: inline-block;
+  color: #cccad2;
+}
+.btn--text:hover {
+  color: #ccc;
+}
+.btn--rounded {
+  border-radius: 4rem;
+}
+.btn--square {
+  border-radius: .5rem;
+}
+
+.btn:hover {
+  background: var(--color-hunt-blue);
+  color: #fff;
+
+}
+.btn--primary {
+  background: var(--color-hunt-blue-light);
+  color: var(--white-color);
+}
+.btn--green ,.btn--red {
+  color: #fff;
+}
+.btn--green {
+  background: rgb(62, 216, 62, .7);
+  
+}
+.btn--green:hover {
+  background: rgb(62, 216, 62);
+
+}
+.btn--red {
+  background: rgb(225, 26, 26, .7);
+}
+.btn--red:hover{
+  background: rgb(225, 26, 26);
+  
+}
+@media screen and (min-width: 768px){
+
+  .btn {
+    font-size: 1.5rem;
+  }
+  
+}
+
+
+/* Icon  */
+.icon {
+  font-size: 2.5rem;
+}
+.icon-menu  {
+  cursor: pointer;
+}
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+  border-top: 1px solid #ccc; 
+  padding: 1px;
+
+  
+}
+.icon-title {
+  display: none;
+  font-size: 1.5rem;
+}
+.icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-link {
+  font-size: 1.2rem;
+  color: var(--white-color);
+  margin-right: 1rem;
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .icon-title{
+      display: inline-block;
+      margin-left: 1rem;
+    }
+ 
+    .icon-group {
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+  
+}

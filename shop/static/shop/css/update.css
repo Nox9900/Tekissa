@@ -1,0 +1,138 @@
+.container {
+    margin-top: 7rem;
+  }
+
+  .input-container input {
+    background-color: rgb(211, 211, 211 , .5);
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+    width: 50rem;
+    outline: none;
+  
+  }
+  
+  .input-container select {
+    background-color: rgb(211, 211, 211 , .5);
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+    width: 52rem;
+    outline: none;
+  }
+  
+  .input-container textarea {
+    background-color: rgb(211, 211, 211 , .5);
+    border-radius: 5px;
+    border: none;
+    width: 105.5rem;
+    margin: 1rem;
+    padding: .2rem;
+    outline: none;
+  
+  } 
+
+  .btn {
+    margin: 1rem;
+    padding: .8rem;
+    border: 1px solid orange;
+    border-radius: 8px;
+    background: orange;
+    color: white;
+
+  }
+
+  .image_class {
+    width: 100rem;
+    height: 100rem;
+  }
+
+  .form-container {
+    display: flex;
+    margin-left: 11rem;
+  }
+
+  .image-container img {
+    margin: 1rem;
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .image-container {
+    padding-left: 9rem;
+    padding-right: 9rem;
+    width: 100%;
+    background-color: whitesmoke;
+  }
+
+  form input {
+    margin-left: 40rem;
+}
+
+form h3 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.form-subtitle {
+  text-align: center;
+  background: orange;
+  width: 130rem;
+  padding: .5rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.form-subtitle h3 {
+  color: white;
+  font-size: 2.4rem;
+  padding: .4rem ;
+}
+
+@media screen and (max-width: 480px) {
+
+    form {
+        margin-left: 3rem;
+        width: 100%;
+    }
+
+    form input {
+        margin-left: 0rem;
+    }
+
+    .image-container {
+        display: flex;
+        overflow: scroll;
+    }
+
+    .form-container {
+        display: block;
+    }
+
+    .input-container input {
+        width: 35rem;
+    }
+
+    .input-container select {
+        width: 37rem;
+    }
+
+    .input-container textarea {
+        width: 36.5rem;
+    }
+
+    .form-container {
+        margin-left: -1rem;
+      }
+
+    .btn {
+        margin-left: -2rem;
+    }
+
+    .image-container {padding-left: 0rem;}
+
+    .form-subtitle {width: 40rem; margin-left: -2rem;}
+
+}

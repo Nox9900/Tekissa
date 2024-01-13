@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {% endblock %} 
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'shop/css/forms.css' %}">
+
+{% endblock %}
+
+{% block content  %}
+{% include 'header2.html' %}
+
+
+<section  class="center-parent">
+ 
+  <form method="post" enctype= "multipart/form-data" class="form">
+  <div class="form-subtitle">
+    <h1>Modifier le profil </h1>
+ </div>
+
+   {% csrf_token %}
+    
+     {{ form2.username }}
+     {{ form2.first_name }}
+     {{ form2.last_name }}
+     {{ form2.email }}
+     {{ form.sex  }}
+     {{ form.address  }}
+     {{ form.cellphone  }}
+
+     <div class="picture">
+       {{ form.picture  }}
+     </div>  
+    <div>
+      {% for message in messages %}
+         <p class='message'>{{ message }}</p>
+      {% endfor %}
+      <input type="submit" value="Modifier" class="btn btn--square btn--primary">
+    </div>
+  </form>
+
+</section>
+
+
+{% endblock %}

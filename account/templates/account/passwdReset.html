@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block title %} {% endblock %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}"> 
+{% endblock %} 
+
+{% block content %}
+<section class="container">
+    <div class="image-container">
+        <img src="{% static 'images/NEWKID.png' %}" alt="" class="form-image">
+    </div>
+
+    <form action="" method="POST" class="form">
+        {% csrf_token %}
+        <h1 class="form-title">
+            <a href="{% url 'index' %}"> Mot de passe oublié </a>
+        </h1>
+        <h2>
+            Veuillez entrez votre E-mail
+        </h2>
+        <div>
+            
+                    <input type='email' name='email' class='form-control' autocomplete='email'
+                        maxlength=254 required id='id_mail' placeholder='Entrer votre addresse mail'
+                    />
+               
+            <div class="form-bottom">
+                <p class="form-sub"> Déjà un compte ? <a class="form-link" href="{% url 'account:login' %}">Se connecter</a></p>
+                <p class="form-sub">Pas de Compte ? <a  class="form-link" href="{% url 'account:register' %}">S'incrire</a></p>
+
+            </div>
+        <div>
+                <div>
+                    <button type="submit" value="Valider" class="btn btn--square btn--primary" > Envoyer </button>
+                </div>
+            </div>
+    </form>
+</section>
+{% endblock %}

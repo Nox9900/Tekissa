@@ -1,0 +1,57 @@
+<html>
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/css/header.css' %}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true">
+    
+{% endblock%}
+
+<body>
+     <nav id="nav">
+            <div class="header">
+
+                  <input type="checkbox" id="check">
+                 
+                  <div class="logo_box"><a href="{% url 'index' %}" ><p class="logo"><span>T</span>ekissa</p></a></div>
+                  <div class="slogan"><p>Vendez plus vite, achetez intélligeament</p></div>
+                  
+                  <ul class="topnav" id="myTopnav">
+                        <li><a href="{% url 'account:logout' %}" class="deconnexion">Deconnexion</a>  </li>
+                        <li><a href="{% url 'shop:create' %}" class="ajouter">Publier un article</a> </li>
+                        <li><a href="#accueil" class="accueil active">ACCUEIL</a> </li>
+                        <li><a href="#categorie" class="categorie_header">CATEGORIE</a>  </li>
+                        <li><a href="#a-la-une" class="la_une">A LA UNE </a>  </li>
+                        {% if user.is_authenticated %}
+                              {% if not user.profile.picture %}
+                                    <p><a href='{% url "account:user_profile" %}' class='img_profile'><img src="{% static  'images/compte.png' %}" width="45rem" height="45rem" alt="user_photo "/></a></p>
+                              {% else %}
+                                    <p><a href='{% url "account:user_profile" %}' class='img_profile'><img src="{{ user.profile.picture.url }}" width="45rem" height="45rem" alt="user_photo "/></a></p>
+                              {% endif %}
+                        {% else %}
+                              <li><a href="{% url 'account:login' %}" class="connecter">SE CONNECTER</a> </li>
+                        {% endif %}  
+
+                        <li><a href="{% url 'account:register' %}" class='inscription'>S'inscrire</a>  </li>
+                        <li><a href="{% url 'guide' %}" class="instructions">Comment ça marche ?</a>  </li>
+                        <div class='div_tag'><li class='tag'>&#169 Tekissa</li></div>
+                   
+                  </ul>  
+
+                  <label for="check" class="checkbtn">
+                        <div class="icon">&#9776;</div>
+                  </label>
+
+                 
+            </div>    
+      </nav>
+
+
+     <script src="{% static 'js/header.js' %}"></script>
+            
+</body>
+
+</html>

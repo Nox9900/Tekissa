@@ -1,0 +1,115 @@
+
+nav {
+    margin-top: -12rem;
+}
+
+.guideLine {
+    margin-top: 12rem;
+}
+
+.sell, .buy {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    height: 20rem;
+}
+
+.online {
+    width: 40%;
+    margin: 1rem;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 2px 2px 10px whitesmoke;
+}
+
+.online p:first-child {
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+.indicatif {
+    border: 1px solid whitesmoke;
+    background: whitesmoke;
+    font-size: 25px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.online1 {
+    width: 40%;
+    margin: 1rem;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 2px 2px 10px whitesmoke;
+}
+
+.online1 p:first-child {
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+.sell-now a {
+    font-size: 18px;
+    border: 1px solid orange;
+    background: orange;
+    border-radius: 4px;
+    color: black;
+    padding: .8rem;
+}
+
+.sell-now {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.advices {
+    font-size: 20px;
+    border: 1px solid whitesmoke;
+    background: whitesmoke;
+    font-size: 25px;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.advices img {
+    width: 20%;
+}
+
+.security {
+    border: 1px solid whitesmoke;
+    background: whitesmoke;
+    font-size: 25px;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+@media screen and (max-width: 480px ) {
+
+  * {
+    font-size: 15px;
+  }
+
+  .sell, .buy {
+    display: block;
+    
+  }
+
+  .online, .online1, .indicatif, .advices {
+    width: 100%;
+    margin-left: 0rem;
+  }
+
+  .sell-now {
+    margin-bottom: 4rem;
+  }
+
+  .now {
+    margin-top: 7rem;
+  }
+
+}

@@ -1,0 +1,50 @@
+<div class="grid-container">
+
+
+ <aside>
+  <h1>La page de profil</h1>
+  <h1>bienvenue {{ user.username }}</h1>
+  <a href="{% url 'account:logout' %}">deconnexion</a>
+  
+  {% if user.Profile.pk %}
+  <a href="{% url 'account:update_profile' pk=user.Profile.pk  %}"
+    >Modifier le profil</a
+  >
+  {% endif %}
+  
+  
+  <a href="{% url 'shop:create'   %}">creer un article </a>
+ </aside>
+ <div class="grid-item-xs">
+  <header class="nav-container">
+    <nav class="navbar">
+      <div class="nav-group-item">
+        <div class="icon-group">
+          <span class="icon">icon</span>
+          <span class="icon-title">hide menu</span>
+        </div>
+        
+      </div>
+      <div class="nav-group-item">
+          <a class="btn" href="{% url 'account:logout' %}">deconnexion</a>
+          {% if user.Profile.pk %}
+          <a class="btn" href="{% url 'account:update_profile' pk=user.Profile.pk  %}"
+            >Modifier le profil</a
+          >
+          {% endif %}
+  
+          <a class="btn " href="{% url 'shop:create'   %}">vendre</a>
+                
+      </div>
+      <div class="nav-group-item">
+            <span class="nav-title">{{ user.username }}</span>
+            <a href="{% url 'account:update_profile' pk=user.Profile.pk  %}">
+              <img class="circle-avatar" src="{% static  'images/avatar2.jpg' %}" alt="" >
+            </a>
+  
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+ </div>

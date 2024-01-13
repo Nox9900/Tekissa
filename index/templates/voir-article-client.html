@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+{% block title %} {% endblock %} 
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'shop/css/voir_article.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+{% include 'header3.html' %}
+
+<body>
+
+<section class="image">
+    <div class="image_slide">
+    {% for images in img %}
+        <img src="{{ images.thumbnail.url }}" class="img" width="230rem" height="230rem" alt=""/>
+    {% endfor %}
+    </div>
+</section>
+
+<section class="sec">
+    <div class="first_part">
+        <div class='detail'>
+            <div><p class='nom'>{{ article.article_name }}</p></div>
+            <div><p><span class="prix">{{ article.article_price }} Fcfa</span></p></div>
+        </div>
+        <div class="description">
+            <h1 class="title"><span>D</span>etails:</h1>
+            <p class="text-desc"> Description : <br><span>{{ article.description }}</span> </p>
+            <p class="auteur"> Auteur      : <span> {{ article.user }} </span> </p>
+            <p > Ville       : <span class='ville'> {{ article.city }} </span> </p>
+            <p class="categorie"> Categorie       : <span> {{ article.category }} </span> </p>
+
+        </div>
+        <div class="description">
+            <h1 class="title"><span>C</span>ontact:</h1>
+        <p>Contactez moi au : <span> {{ article.user.profile.cellphone }}</span></p>
+    </div>
+  
+
+</div>
+
+</section>
+
+
+</body>
+
+{% endblock %}

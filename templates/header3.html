@@ -1,0 +1,47 @@
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/css/header.css' %}">
+{% endblock%} 
+
+{% block content %}
+<nav>
+      <div class="header">
+        <input type="checkbox" id="check">
+        <div class="logo_box"><a href="{% url 'index' %}" ><p class="logo"><span>T</span>ekissa</p></a></div>
+        <div class="slogan"><p>Vendez plus vite, achetez intélligeament</p></div>
+
+
+        <ul class="topnav" id="myTopnav">
+          {% if user.is_authenticated %}
+              {% if not user.profile.picture %}
+                <p><a href='{% url "account:user_profile" %}' class='img_profile'><img src="{% static  'images/compte.png' %}" width="45rem" height="45rem" alt="user_photo "/></a></p>
+                <li><a href="{% url 'account:register' %}" class='inscription'>S'inscrire</a></li>
+                <li><a href="{% url 'guide' %}" class="instructions">Comment ça marche ?</a></li>
+                <div class='div_tag'><li class='tag'>&#169 Tekissa</li></div>
+              {% else %}
+                <li><a href='{% url "account:user_profile" %}' class='img_profile'><img src="{{ user.profile.picture.url }}" width="45rem" height="45rem" alt="user_photo "/></a></li>
+                <li><a href="{% url 'account:register' %}" class='inscription'>S'inscrire</a></li>
+                <li><a href="{% url 'guide' %}" class="instructions">Comment ça marche ?</a></li>
+                <div class='div_tag'><li class='tag'>&#169 Tekissa</li></div>
+
+              {% endif %}          
+          {% else %}
+            <li><a href="{% url 'account:login' %}" class="connecter">SE CONNECTER</a></li>
+            <li><a href="{% url 'account:register' %}" class='inscription'>S'inscrire</a></li>
+            <li><a href="{% url 'guide' %}" class="instructions">Comment ça marche ?</a></li>
+            <div class='div_tag'><li class='tag'>&#169 Tekissa</li></div>
+
+          {% endif %}         
+        </ul>
+
+        <label for="check" class="checkbtn">
+          <div class="icon">&#9776;</div>
+        </label>
+  
+      </div>
+
+     
+</nav>         
+
+{% endblock %}

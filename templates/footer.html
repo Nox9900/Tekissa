@@ -1,0 +1,55 @@
+<html>
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<footer>
+      <div class ="commentaire">
+            <form  method='post'  enctype="multipart/form-data" class="commentaire-input">
+                  <h4 class="post_comment"> <span>L</span>aisser un Avis </h4>
+                  {% csrf_token %}
+                  <div>
+                    <div class="form-container">
+                      <div class="input-container">
+                        {{ form.name }}
+                      </div>
+                    </div>
+                    <div class="form-container">
+                      <div class="input-container">
+                        {{ form.commentaire }}
+                      </div>
+                    </div>
+                      <div><input type='submit' class="btn" value='Envoyer'/></div>
+                  </div>
+                  {% for message in messages %}
+                    <p> {{ message }} </p>
+                  {% endfor %}
+            </form>
+      </div>
+
+      <div class="liensUtiles">
+        <h4> <span>L</span>iens Utiles </h4>
+        <a href="{% url 'guide' %}"> Comment ça marche  </a>
+        <a href="#"> Debuter sur Tekissa </a>
+        <a href="#"> Confiance et Sécurité </a>
+      </div>
+
+      <div class="contact">
+        <div class="info">
+            <h4 class"num"><span>N</span>ous Contacter </h4>
+            <p><img src="{% static "/images/mail.png" %}" alt="" height="30rem" width="30rem" class='img_contact img_email'/><strong class='plus'><a mailto=''>tekissa@gmail.com</a></strong></p>
+            <p><img src="{% static "/images/phone.png" %}" alt="" height="30rem" width="30rem" class='img_contact'/><strong class="plus">+242 06 474 00 47</strong></p    
+            <p><img src="{% static "/images/phone.png" %}" alt="" height="30rem" width="30rem" class='img_contact'/><strong class="plus">+242 04 003 07 36</strong></p    
+        </div>
+      </div>
+ 
+</footer>
+
+<h5 class="copyright"> &#169 Tous droits réservés à Tekissa | </h5>
+
+{% endblock %}
+</html>

@@ -1,0 +1,123 @@
+{% block title %} {% endblock %} 
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static '/css/categories.css' %}"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+  <meta name="HandheldFriendly" content="true">{% endblock %}
+
+{% block content %}
+
+{% include 'header3.html' %}
+
+<div class="container">
+    <div class="side-menu">
+        <div class="side-title">
+          <div class="p1"><p>
+            Toutes les annonces
+          </p></div><span> / </span>
+          <div class="p2"><p>
+            object
+          </p></div>
+        
+        </div>
+
+        <div class="part1">
+          <div class="container-part1">
+              <h3 class="first color">Catégories</h3>
+              <div class='in'>
+
+              {% for item in first_categorie %}
+              <div class="range">
+                {% if item.name == 'Electronique' %}
+                  <a href="{% url 'categorie_electronique' %}" class="link">Electronique : {{ electronique_annonce }} annonce(s) </a>
+                {% elif item.name == 'Véhicule' %}
+                  <a href="{% url 'categorie_vehicule' %}" class="link"> Véhicule : {{ vehicule_annonce }} annonce(s) </a>
+                {% elif item.name == 'Immobilier' %}
+                  <a href="{% url 'categorie_immobilier' %}" class="link">Immobilier : {{ immobilier_annonce }} annonce(s)</a>
+                {% elif item.name == 'Vetements' %}
+                  <a href="{% url 'categorie_vetement' %}" class="link">Vetements : {{ vetement_annonce }} annonce(s)</a>
+          
+                  {% endif %}
+              </div>  
+              {% endfor %}
+            </div>
+
+              <p class="first-2">Afficher les Categories </p>
+
+              <div class="range hidden view">
+                {% for item in first_categorie %}
+                <div class="item">
+                {% if item.name == 'Animaux' %}
+                  <a href="{% url 'categorie_animaux' %}" class="link"> Animaux : {{ animaux_annonce }} annonce(s)</a>
+                {% elif item.name == 'Accessoires' %}
+                  <a href="{% url 'categorie_accessoire' %}" class="link"> Accessoires : {{ accessoire_annonce }} annonce(s)</a>
+                {% elif item.name == 'Autres' %}
+                  <a href="{% url 'categorie_autres' %}" class="link"> Autres : {{ autre_annonce }} annonce(s)</a> 
+                {% endif %}
+                </div>
+                {% endfor %}
+              </div>
+              <p class="first-2 off">Masquer les Catégories</p>
+          </div>
+        </div>
+
+        <div class="part2">
+          <div class="second-part1">
+          <p>Villes En vue</p>
+          <h1 class="rotate">></h1>
+        </div>
+     
+        <div class="element-rotate">  
+          <ul>
+            <li> Brazzaville </li>
+            <li> Pointe-Noire </li>
+            <li> Dolisie </li>
+          </ul>
+      </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="top">
+            <div class="p1"><p>
+              Toutes les publicités
+            </p></div><span> / </span>
+            <div class="p2"><p>
+              Objects
+            </p></div>
+        </div>
+
+        <div class="title-right">
+            <h3 class="title-main"> ACCESSOIRES : {{ accessoire_annonce }} annonce(s)</h3>
+            <div class="search">
+              <form method="get" action="{% url "recherche" %}" class="form">
+                <input type="search" name="recherche" placeholder="Que recherchez-vous?" width="100%">
+                <div class="icon-search"><button type="submit" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+                  </svg></button></div>
+                </form>
+            </div>
+            <h3 class="title-reco">Recommandé</h3>
+        </div>
+
+        <div class="products">
+            {% for article in categorie %}
+            <div class="card">
+                <img src="{{ article.image }}" width="100rem" />
+                <h1>{{ article.name }}</h1>
+                <p class="tit">{{ article.price }} Fcfa</p>
+                <p><button><a href="{% url 'client-article' pk=article.pk %}">Voir</button></a></p>
+            </div>
+            {% endfor %}
+      
+        </div>
+    </div>
+
+
+</div>
+
+<script src="{% static '/js/categories.js' %}"></script>
+
+{% endblock %}

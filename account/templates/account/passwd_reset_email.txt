@@ -1,0 +1,16 @@
+{% autoescape off %}
+
+Bonjour {{ user.username }},
+
+Nous avons reçu une demande de reintialisation de votre mot de passe pour {{ user.email }}. 
+Pour le faire, veuillez cliquer sur le lien ci dessous.
+
+{{ protocol }}://{{ domain }}{% url 'account:password_reset_confirm' uidb64=uid token=token %}
+
+Ce lien est utilisable une seule fois. si voulez de nouveau reinitialiser votre mot de passe, visitez {{ protocol }}://{{ domain }} et demander une autre requete
+.............
+
+Merci
+
+
+{% endautoescape %}

@@ -1,0 +1,184 @@
+/* footer partie */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 2rem;
+    padding-left: 8rem;
+    width: 100%;
+    height: 20rem;
+  }
+
+  /*Partie commentaire  */
+
+  .commentaire {
+    margin-top: -1rem;
+  }
+
+  .commentaire-input .input-container {
+
+    padding: .5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    color: white;
+    font-weight: bold;
+    background: orange;
+    border: none;
+    padding: .7rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    opacity: .7;
+  }
+
+  .input-container textarea {
+    height: 7rem;
+  }
+  
+  .input-container textarea, .input-container input {
+    width: 25rem;
+    padding: .5rem;
+    outline: none;
+    border: 2px solid rgba(48, 46, 42, 0.5);
+    background: whitesmoke;
+  
+  }
+
+  .contact {
+    width: 30%;
+    height: 100px;
+    margin-top: -1rem;
+  }
+
+  .contact img {
+    margin-bottom: -.5rem;
+    margin-top: .5rem;
+    margin-right: 1rem;
+  }
+
+  .plus {
+    margin-right: 1rem;
+  }
+
+  .liensUtiles  {
+    padding: .5rem;
+    margin-top: -1.5rem;
+    width: 18%;
+    font-size: 18px;
+    
+  }
+
+  .liensUtiles a {
+    padding-top: 5rem;
+    color: rgb(150, 147, 147);;
+  }
+
+  .copyright {
+    margin: 2rem;
+    text-align: right;
+  }
+
+  .copyright a {
+    color: rgb(205, 200, 200);
+  }
+
+  .bottom-footer {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    margin-top: 10rem;
+    padding: 1rem;
+    font-size: 15px;
+    background-color: rgb(227, 221, 221);
+  }
+
+  .bottom-footer p a{
+    color: black;
+    margin: .5rem;
+    text-decoration: underline;
+  }
+
+  .post_comment {
+    margin-left: .8rem;
+  }
+
+
+@media screen and (max-width: 800px) {
+  
+  footer {
+    display: block;
+    width: 95%;
+    padding: 0;
+    margin: 0;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    font-size: 17px;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .input-container textarea, .input-container input {
+    width: 100%;
+  }
+
+  .liensUtiles {
+    margin-top: 2.5rem;
+    margin-right: 2rem;
+    width: 25%;
+  }
+
+  .liensUtiles a {font-size: 13px;}
+
+  .contact {
+    width: 70%;
+    margin-top:2rem;
+    
+  }
+
+  hr {
+    display: none;
+  }
+
+  .img_contact {
+    height: 14px;
+    width: 14px;
+  }
+
+  .img_email {
+    width: 14px;
+    height: 14px;
+    padding: 0rem;
+    
+  }
+  .copyright {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact {
+    margin-top: 4rem;
+    margin-bottom: 3rem;}
+
+  .liensUtiles {width: 45%;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact {
+    margin: -.5rem;
+    margin-top: 1rem;
+  }
+
+  .liensUtiles a, .plus {font-size: 12px;}
+
+}
+

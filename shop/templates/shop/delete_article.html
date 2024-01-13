@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% block title %} {% endblock %} 
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/profile.css' %}">
+{% endblock %}
+{% block content %}
+
+
+    
+  
+        <div class="card__actions">
+          
+          <div class="CardProduct">
+            <h1> DETAILS </h1><br>
+            <p> Nom : {{ article.article_name }} </p>
+            <p> Prix : {{ article.article_price }}  Fcfa</p>
+            <p> Auteur : {{ article.user }} </p>
+            <p> Ville : {{ article.city }} </p>
+
+            <h1> Cette action supprimera définitivement l'article :<br> {{ article.article_name }} </h1>
+
+              
+          </div>
+
+            <form action="" method="post">
+              {% csrf_token %}
+              <input type="submit" class="btn btn--square btn--green"  value="Confirmez"/>
+              <a href="{% url 'account:user_profile'  %}" class="btn btn--square btn--red">Annuler</a>
+            </form>
+        </div>  
+
+
+
+{% endblock %}

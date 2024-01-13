@@ -1,0 +1,193 @@
+/*  Vendre un Article  */
+.center-parent {
+  text-align: center;
+  background: #fff;
+  width: 90%;
+  margin-top: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 1px 1px 2px orange;
+  border-radius: 1.5rem;
+  padding: 1rem 3rem;
+}
+.head {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+nav {
+  margin-top: -10rem;
+}
+
+.message {
+  color: red;
+  font-size: 20px;
+}
+
+.useful_links {
+  margin-top: 10rem;
+  margin-left: 5%;
+}
+
+.useful_links p a{
+  font-size: 18px;
+}
+
+
+
+ .form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.form-input {
+   width: 100%;
+   display: block;
+   border: 1px solid #000000; 
+   padding: 1rem;
+   font-size: 1.5rem;
+   margin-right: 1rem;
+   margin-top: 1.5rem;
+
+}
+
+@media screen and (min-width: 768px) {
+
+
+  .form-input {
+     width: 50rem;
+     display: inline-block;
+     border: 1px solid #000000; 
+     padding: 1rem;
+     font-size: 1.5rem;
+     margin-right: 1rem;
+     margin-top: 1.5rem;
+  
+  }
+
+}
+.form-subtitle {
+  text-align: center;
+  background: orange;
+  padding: .5rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.form-subtitle h1 {
+  color: white;
+  font-size: 2.4rem;
+  padding: .4rem ;
+}
+
+select.form-input {
+  background-color: rgb(211, 211, 211 , .5);
+  border-radius: 5px;
+  border: none;
+}
+
+input.form-input {
+  background-color: rgb(211, 211, 211 , .5);
+  border-radius: 5px;
+  border: none;
+}
+
+textarea.form-input {
+  font-size: 1.5rem;
+  display: block;
+  background-color: rgb(211, 211, 211 , .5);
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+
+}
+.file-input{
+  display: none;
+}
+
+.center-parent .btn{
+  font-size: 1.5rem;
+  width: 10rem;
+}
+.center-parent .btn--primary{
+  background:orange;
+}
+.image-selection {
+  display: flex;
+  text-align: left;
+}
+button#file-submission{
+  display: inline-block;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  background: orange;
+  border-radius: 100%;
+
+
+}
+.aware{
+  text-align: left;
+  margin-top: .5rem;
+}
+.aware p {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #666;
+}
+
+.upload-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  margin-top: 1rem;
+}
+
+.uploaded-img {
+  width: 10rem;
+  border-radius: 5px; 
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem; 
+}
+
+.output {
+  width: 12rem;
+}
+.output img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.picture  {
+  font-size: 1.7rem;
+  margin: 2rem;
+}
+
+
+
+
+@media screen and (max-width: 480px){
+
+  nav {
+    margin-top: -10rem;
+  }
+  .center-parent {
+    margin-top: 10rem;
+  }
+
+  .form {
+    padding: 1rem;
+  }
+
+  .btn {
+    margin-top: 1.5rem;
+  }
+}

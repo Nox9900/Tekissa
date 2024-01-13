@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block title %} {% endblock %} 
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'shop/css/voir_article.css' %}">
+<style>
+    .img_profile {
+        display: none;
+      }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+{% include 'header.html' %}
+
+<body>
+
+<section class="image">
+    <div class="image_slide">
+            {% for images in img %}
+                <img src="{{ images.thumbnail.url }}" alt="" width="230rem" height='230rem'>
+            {% endfor %}
+    </div>
+</section>
+
+<section class="sec">
+    <div class="first_part">
+        <div class='detail'>
+            <div><p class='nom'>{{ article.article_name }}</p></div>
+            <div><p><span class="prix">{{ article.article_price }} Fcfa</span></p></div>
+        </div>
+        <hr>
+        <div class="description">
+            <h1 class="title"><span>D</span>etails:</h1>
+            <p class="text-desc"> Description : <br>{{ article.description }} </p>
+            <p> Auteur      : <span> {{ article.user }} </span> </p>
+            <p> Ville       : <span> {{ article.city }} </span> </p>
+            <p> Categorie       : <span> {{ article.category }} </span> </p>
+
+        </div>
+    </div>
+    
+    <div class="back">
+
+        <a href="{% url 'account:user_profile' %}" > Retour </a>
+        <a href="{% url 'shop:update_article' pk=article.pk %}" > Modifier </a>
+
+    </div>
+
+</section>
+
+
+</body>
+
+
+{% endblock %}
